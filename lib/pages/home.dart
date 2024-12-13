@@ -19,6 +19,11 @@ class HomePage extends StatelessWidget {
         // remove the shadow
         elevation: 0.0,
         centerTitle: true,
+        leading: Container(
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              color: Colors.black, borderRadius: BorderRadius.circular(10)),
+        ),
       ),
     );
   }
