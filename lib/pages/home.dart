@@ -1,4 +1,5 @@
 import 'package:first_flutter/models/category_model.dart';
+import 'package:first_flutter/models/diet_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,13 +12,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = [];
-  void _getCategories() {
+
+  List<DietModel> diets = [];
+
+  void _getInitialInfo() {
     categories = CategoryModel.getCategories();
+    diets = DietModel.getDiets();
   }
 
   @override
   Widget build(BuildContext context) {
-    _getCategories();
+    _getInitialInfo();
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
@@ -29,6 +34,105 @@ class _HomePageState extends State<HomePage> {
             height: 40,
           ),
           _categoriesSection(),
+          SizedBox(
+            height: 40,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  'Recommendation\nfor Diet',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 240,
+                child: ListView.separated(
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 210,
+                      decoration: BoxDecoration(
+                          color: diets[index].boxColor,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                            width: 80,
+                            height: 80,
+                            child: SvgPicture.asset(
+                              diets[index].iconPath,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                diets[index].name,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text(
+                                diets[index].level +
+                                    ' | ' +
+                                    diets[index].duration +
+                                    ' | ' +
+                                    diets[index].calories,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            height: 45,
+                            width: 130,
+                            child: Center(
+                              child: Text(
+                                'View',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                              Colors.black,
+                              Colors.white,
+                            ])),
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: 25,
+                  ),
+                  itemCount: diets.length,
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
