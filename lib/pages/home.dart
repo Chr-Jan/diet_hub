@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 15,
               ),
-              Container(
+              SizedBox(
                 height: 240,
                 child: ListView.separated(
                   itemBuilder: (context, index) {
@@ -84,11 +84,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Text(
-                                diets[index].level +
-                                    ' | ' +
-                                    diets[index].duration +
-                                    ' | ' +
-                                    diets[index].calories,
+                                '${diets[index].level} | ${diets[index].duration} | ${diets[index].calories}',
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 13,
@@ -100,21 +96,30 @@ class _HomePageState extends State<HomePage> {
                           Container(
                             height: 45,
                             width: 130,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    diets[index].viewIsSelected
+                                        ? (Colors.blueAccent)
+                                        : Colors.transparent,
+                                    diets[index].viewIsSelected
+                                        ? (Colors.blueGrey)
+                                        : Colors.transparent,
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(20)),
                             child: Center(
                               child: Text(
                                 'View',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: diets[index].viewIsSelected
+                                      ? Colors.white
+                                      : Color(0xffC58BF2),
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14,
                                 ),
                               ),
                             ),
-                            decoration: BoxDecoration(
-                                gradient: LinearGradient(colors: [
-                              Colors.black,
-                              Colors.white,
-                            ])),
                           )
                         ],
                       ),
@@ -156,7 +161,7 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 15, // Add spacing if needed
         ),
-        Container(
+        SizedBox(
           height: 120,
           child: ListView.separated(
             itemCount: categories.length,
@@ -234,7 +239,7 @@ class _HomePageState extends State<HomePage> {
                   width: 20,
                 ),
               ),
-              suffixIcon: Container(
+              suffixIcon: SizedBox(
                 width: 100,
                 child: IntrinsicHeight(
                   child: Row(
