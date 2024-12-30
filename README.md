@@ -2,7 +2,9 @@
 
 ## application:
 
-<img src="github_image/image.png">
+<p>A food and diet app that offers personalized diet recommendations, search functionality, and interactive categories</p>
+
+<img src="github_image/image.png" height="300">
 
 
 ### Fonts from:
