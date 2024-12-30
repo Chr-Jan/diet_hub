@@ -5,7 +5,7 @@
 <p>A food and diet app that offers personalized diet recommendations, search functionality, and interactive categories</p>
 
 <p align="center">
-  <img src="github_image/image.png" height="100">
+  <img src="github_image/image.png" height="600">
 </p>
 
 
