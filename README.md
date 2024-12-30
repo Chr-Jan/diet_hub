@@ -1,6 +1,6 @@
 # Layout for food application
 
-## application:
+## Application:
 
 <p>A food and diet app that offers personalized diet recommendations, search functionality, and interactive categories</p>
 
