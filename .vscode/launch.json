@@ -6,18 +6,18 @@
     "configurations": [
         
         {
-            "name": "first_flutter",
+            "name": "diet_hub",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "first_flutter (profile mode)",
+            "name": "diet_hub (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "first_flutter (release mode)",
+            "name": "diet_hub (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

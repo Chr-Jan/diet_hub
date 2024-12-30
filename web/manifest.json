@@ -1,6 +1,6 @@
 {
-    "name": "first_flutter",
-    "short_name": "first_flutter",
+    "name": "diet_hub",
+    "short_name": "diet_hub",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

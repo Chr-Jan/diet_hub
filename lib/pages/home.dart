@@ -1,6 +1,6 @@
-import 'package:first_flutter/models/category_model.dart';
-import 'package:first_flutter/models/diet_model.dart';
-import 'package:first_flutter/models/popular_model.dart';
+import 'package:diet_hub/models/category_model.dart';
+import 'package:diet_hub/models/diet_model.dart';
+import 'package:diet_hub/models/popular_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

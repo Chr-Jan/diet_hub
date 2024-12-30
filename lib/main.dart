@@ -1,4 +1,4 @@
-import 'package:first_flutter/pages/home.dart';
+import 'package:diet_hub/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

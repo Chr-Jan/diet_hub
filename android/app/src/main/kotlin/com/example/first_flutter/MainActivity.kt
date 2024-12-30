@@ -1,4 +1,4 @@
-package com.example.first_flutter
+package com.example.diet_hub
 
 import io.flutter.embedding.android.FlutterActivity
 
